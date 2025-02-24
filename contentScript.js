@@ -18,7 +18,7 @@ function extractMovieInfo() {
         
         return { 
             title: title ? title.trim() : null,
-            year: year ? year[0] : null
+            // year: year ? year[0] : null
         };
     }
     return null;
@@ -50,7 +50,7 @@ function titleToSlug(title) {
 // Add a floating button on movie pages
 if (isMoviePage()) {
     const button = document.createElement('button');
-    button.textContent = '🎬 Add to Letterboxd';
+    button.textContent = '🎬 Open in Letterboxd';
     button.style.cssText = `
         position: fixed;
         bottom: 20px;
