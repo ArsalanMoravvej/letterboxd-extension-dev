@@ -1,0 +1,33 @@
+{
+  "name": "Letterboxd Helper",
+  "version": "0.1.0",
+  "description": "Search and manage Letterboxd movies",
+  "permissions": ["contextMenus", "storage", "tabs"],
+  "host_permissions": ["https://*.google.com/*", "https://letterboxd.com/*"],
+  "background": {
+      "service_worker": "background.js"
+  },
+  "content_scripts": [{
+      "matches": [
+          "https://*.google.com/*",
+          "https://letterboxd.com/*"
+      ],
+      "js": ["contentScript.js"]
+  }],
+  "icons": {
+      "16": "assets/icon16.png",
+      "32": "assets/icon32.png",
+      "48": "assets/icon48.png",
+      "128": "assets/icon128.png"
+  },
+  "action": {
+      "default_icon": {
+          "16": "assets/icon16.png",
+          "24": "assets/icon24.png",
+          "32": "assets/icon32.png"
+      },
+      "default_title": "Letterboxd Helper",
+      "default_popup": "popup.html"
+  },
+  "manifest_version": 3
+}
